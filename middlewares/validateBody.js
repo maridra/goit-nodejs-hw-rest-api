@@ -6,7 +6,7 @@ const validateMessages = {
   updateFavorite: "Missing field favorite",
 };
 
-const validateBody = (schema, message = validateMessages.update) => {
+const validateBody = (schema, message = "Bad Request") => {
   const func = (req, res, next) => {
     const { error } = schema.validate(req.body);
     if (error) {
